@@ -31,14 +31,14 @@ parts = {key: (value / production_totale) * 100 for key, value in sources.items(
 
 
 print("Production totale :", production_totale)
-for source, pct in parts.items():
-    print("Part de " , source , ": " , (parts[source]) , "%") 
+for source, pourcentages in parts.items():
+    print("Part de " , source , ": " , pourcentages , "%") 
 
 
 labels = list(parts.keys())           #les noms des sources 
 values = list(parts.values())         #les valeurs en pourcentages calculés juste avant
 
-plt.figure(figsize=(16, 9))
+plt.figure(figsize=(10, 7))
 plt.pie(values, labels=labels, autopct='%1.1f%%', 
         colors=['green', 'yellow', 'cyan'])
 plt.title("Production des énergies renouvelables : Solaire, Hydraulique, Éolien ")
