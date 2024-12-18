@@ -22,7 +22,7 @@ with open("RTE_2022.csv", mode='r') as csvfile:
             for key in sources:                             #on met à jour pour chaque valeur qu'on enregistre dans le dico sources, on les additionne.
                 sources[key] += prod_row[key]
 
-            production_totale += sum(prod_row.values()) #le total global
+            production_totale += sum(prod_row.values()) #le total global avec la somme des valeurs du précédent dictionnaire prod_row
         except (IndexError, ValueError):       #ca permet juste d'ignorer les valeurs invalides(comme les espaces) et continuer(Index c pour les colonnes et Value c pour les valeurs dans le fichier)
             continue
 
